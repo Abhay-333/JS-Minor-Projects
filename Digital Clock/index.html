@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+
+    <style>
+        .btn {
+            padding: 1vw 2vw;
+            background-color: rgb(27, 26, 26);
+            border-radius: 10px;
+        }
+
+        .btns {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8vw;
+        }
+    </style>
+</head>
+
+<body class="h-screen flex bg-zinc-900 items-center justify-center">
+
+    <div class="digitalClock h-[10rem] text-white flex items-center justify-center w-[25rem] bg-zinc-800 rounded-lg">
+        <h1 class="time text-7xl">
+            <span class="hours overflow-hidden">00</span> :
+            <span class="minutes overflow-hidden">00</span> :
+            <span class="seconds overflow-hidden">00</span> 
+            
+            <div class="day text-[1.8vw] mt-5 ml-5">
+                Thursday, 28, august ,2024
+            </div>
+        </h1>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
