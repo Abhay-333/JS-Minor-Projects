@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+
+    <style>
+        .btn {
+            padding: 1vw 2vw;
+            background-color: rgb(27, 26, 26);
+            border-radius: 10px;
+        }
+
+        .btns {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8vw;
+        }
+    </style>
+</head>
+
+<body class="h-screen flex bg-zinc-900 items-center justify-center">
+
+    <div
+        class="calculator bg-zinc-700 px-2 py-5 text-white flex-col flex items-center justify-between relative h-[21rem] w-[15rem] rounded-lg">
+
+        <input id="input" type="text" class="text-black rounded-md h-10 text-right">
+
+        <div class="box flex gap-3">
+            <button class="btn" onclick="clearInp()">Clear</button>
+            <button class="btn" onclick="deletePrev()">Delete</button>
+        </div>
+
+        <div class="btns">
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn" onclick="setOperation('+')">+</button>
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn" onclick="setOperation('-')">-</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="setOperation('*')">*</button>
+            <button class="btn" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+            <button class="btn" onclick="setOperation('/')">/</button>
+            <button class="btn" onclick="setOperation('=')">=</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
