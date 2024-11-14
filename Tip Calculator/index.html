@@ -4,54 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Responsive Tip Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="h-screen w-full bg-zinc-800 flex items-center justify-center text-white">
 
-    <div class="box border-white border-[1px] rounded-xl w-[60rem] h-[30rem]">
+    <div class="box border-white border-[1px] rounded-xl w-full max-w-4xl h-auto lg:h-[30rem] overflow-hidden p-4">
 
-        <form class="flex items-start px-7 py-5 w-full h-full">
-            <div class="left w-[50%]">
+        <form class="flex flex-col lg:flex-row items-start lg:items-stretch px-4 py-5 w-full h-full gap-6">
+            <div class="left w-full lg:w-1/2 space-y-6">
 
                 <div class="left-top">
                     <label class="text-xl">Bill</label>
                     <br>
-                    <input id="bill"
-                        class="bg-zinc-300 p-3 rounded-xl w-[85%] text-black text-right text-2xl outline-none"
-                        type="text" placeholder="$">
+                    <input id="bill" class="bg-zinc-300 p-3 rounded-xl w-full lg:w-[85%] text-black text-right text-2xl outline-none" type="text" placeholder="$">
                 </div>
 
-                <div class="middle mt-[10%] w-[85%]">
+                <div class="middle w-full lg:w-[85%]">
                     <label class="text-xl">Select Tip %</label>
-                    <div class="grid grid-cols-3 grid-rows-2 mt-[3%] gap-3">
-                        <button id="five" onclick="setAttrForFive(this)"
-                            class="elem bg-[#00474B] rounded-lg w-[7.5rem] h-[3.5rem] font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">5%</button>
-                        <button id="ten"
-                        onclick="setAttrForTen(this)" class="elem bg-[#00474B] rounded-lg w-[7.5rem] h-[3.5rem] font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">10%</button>
-                        <button id="fifteen"
-                        onclick="setAttrForFifteen(this)" class="elem bg-[#00474B] rounded-lg w-[7.5rem] h-[3.5rem] font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">15%</button>
-                        <button id="twenty-five"
-                        onclick="setAttrForTwentyFive(this)" class="elem bg-[#00474B] rounded-lg w-[7.5rem] h-[3.5rem] font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">25%</button>
-                        <button id="fifty"
-                        onclick="setAttrForFifty(this)" class="elem bg-[#00474B] rounded-lg w-[7.5rem] h-[3.5rem] font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">50%</button>
-                        <button id="custom"
-                        onclick="setAttrCustom(this)" class="elem bg-[#00474B] rounded-lg w-[7.5rem] h-[3.5rem] font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">Custom</button>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-3">
+                        <button id="five" onclick="setAttrForFive(this)" class="elem bg-[#00474B] rounded-lg w-full h-14 font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">5%</button>
+                        <button id="ten" onclick="setAttrForTen(this)" class="elem bg-[#00474B] rounded-lg w-full h-14 font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">10%</button>
+                        <button id="fifteen" onclick="setAttrForFifteen(this)" class="elem bg-[#00474B] rounded-lg w-full h-14 font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">15%</button>
+                        <button id="twenty-five" onclick="setAttrForTwentyFive(this)" class="elem bg-[#00474B] rounded-lg w-full h-14 font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">25%</button>
+                        <button id="fifty" onclick="setAttrForFifty(this)" class="elem bg-[#00474B] rounded-lg w-full h-14 font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">50%</button>
+                        <button id="custom" onclick="setAttrCustom(event,this)" class="elem bg-[#00474B] rounded-lg w-full h-14 font-bold text-xl hover:bg-zinc-300 hover:text-[#00474B] transition-all">Custom</button>
                     </div>
-
                 </div>
 
-                <div class="left-btm mt-[6%]">
+                <div class="left-btm">
                     <label class="text-xl">Number of People</label>
-                    <input id="people-inp"
-                        class="bg-zinc-300 mt-[2%] p-3 rounded-xl w-[85%] text-black text-right text-xl outline-none"
-                        type="text">
+                    <input id="people-inp" placeholder="0" class="bg-zinc-300 mt-2 p-3 rounded-xl w-full lg:w-[85%] text-black text-right text-xl outline-none" type="text">
                 </div>
 
             </div>
 
-            <div class="right w-[50%] bg-[#00474B] h-full rounded-xl px-5 py-9">
+            <div class="right w-full lg:w-1/2 bg-[#00474B] rounded-xl p-6 flex flex-col justify-between space-y-6 lg:space-y-0">
 
                 <div class="tip flex justify-between">
                     <div class="tip-title">
@@ -59,11 +48,10 @@
                         <br>
                         <label class="text-[#6f979b]">/person</label>
                     </div>
-
                     <label id="tipAmt" class="text-5xl font-bold">$<span>0.00</span></label>
                 </div>
 
-                <div class="total flex justify-between mt-10">
+                <div class="total flex justify-between mt-4">
                     <div class="tip-title">
                         <label class="text-xl">Total</label>
                         <br>
@@ -72,11 +60,9 @@
                     <label id="showTotal" class="text-5xl font-bold">$<span>0.00</span></label>
                 </div>
 
-                <button class="bg-[#0D686D] w-full rounded-xl py-5 mt-[40%] font-bold tracking-wider">RESET</button>
+                <button id="reset" class="bg-[#0D686D] w-full rounded-xl py-4 font-bold tracking-wider mt-4 lg:mt-10">RESET</button>
 
             </div>
-
-
         </form>
 
     </div>
