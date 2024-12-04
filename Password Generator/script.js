@@ -6,8 +6,19 @@ const number = document.querySelector("#number")
 const character = document.querySelector("#character")
 
 let str = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`
-// let allo
+let characterStr = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
-function generatePassword(){
 
+length.addEventListener("input",(e)=>{
+    displayLength.textContent = e.target.value
+    generatePassword(e)
+})
+
+function generatePassword(passwordLength){
+    for(let i = 0; i <= str.length; i++){
+        const randomCharacterSelector = Math.floor(Math.random()*str.length)
+        const newPassword = ''
+
+        console.log(randomCharacterSelector)
+    }
 }
